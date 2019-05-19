@@ -5,11 +5,6 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "test": "cross-env NODE_ENV=testing jest --forceExit --detectOpenHandles --silent",
-    "test-schema": "GQL_LESSON=lesson-2 npm test -- -t lesson-2",
-    "test-resolvers": "npm test -- -t lesson-3",
-    "test-interfaces": "cross-env npm test -- -t lesson-4",
-    "test-auth": "npm test -- -t lesson-5",
     "dev": "nodemon --exec yarn restart",
     "restart": "rimraf dist && yarn build && yarn start",
     "start": "node dist/index.js"
@@ -22,7 +17,6 @@
     "@babel/preset-env": "^7.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.2.1",
-    "babel-jest": "^23.4.2",
     "cross-env": "^5.2.0",
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
@@ -36,31 +30,14 @@
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "graphql-codegen-core": "^0.14.5",
-    "jest": "^23.6.0",
     "nodemon": "^1.18.3",
     "prettier": "^1.15.2",
-    "rimraf": "^2.6.2",
-    "supertest": "^3.3.0"
-  },
-  "jest": {
-    "verbose": true,
-    "testURL": "http://localhost/",
-    "testEnvironment": "node",
-    "setupTestFrameworkScriptFile": "<rootDir>/test-db-setup.js",
-    "testPathIgnorePatterns": [
-      "dist/"
-    ],
-    "restoreMocks": true
+    "rimraf": "^2.6.2"
   },
   "dependencies": {
     "apollo-server": "^2.2.5",
-    "bcrypt": "^3.0.2",
-    "cuid": "^2.1.4",
     "graphql": "^14.0.2",
     "graphql-import": "^0.7.1",
-    "graphql-tools": "^4.0.3",
-    "lodash": "^4.17.11",
-    "mongoose": "^5.3.14",
-    "validator": "^10.9.0"
+    "graphql-tools": "^4.0.3"
   }
 }
